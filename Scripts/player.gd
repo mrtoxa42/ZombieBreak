@@ -5,6 +5,7 @@ const WALK_SPEED = 200
 var speed = 200
 var click = false
 
+
 var bullet = preload("res://Scenes/bullet.tscn")
 var bulletbox = preload("res://Scenes/bullet_box.tscn")
 
@@ -51,3 +52,6 @@ func attack():
 func tween_finished():
 	var tween = get_tree().create_tween()
 	tween.tween_property($Armys,"position",Vector2($ArmysPosition.position.x,$ArmysPosition.position.y),0.1)
+
+
+

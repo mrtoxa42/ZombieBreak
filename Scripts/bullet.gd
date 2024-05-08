@@ -17,4 +17,7 @@ func _physics_process(delta):
 
 
 func _on_area_entered(area):
-	pass
+	if area.is_in_group("Zombie"):
+		print("a")
+		area.get_owner().queue_free()
+		queue_free()

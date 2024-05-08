@@ -9,5 +9,5 @@ func _process(delta):
 	velocity = direction * speed
 	move_and_slide()
 	
-	$Skeleton2D/Bone2D/Bone2D/l.look_at(player.global_position)
-	$Skeleton2D/Bone2D/Bone2D/r.look_at(player.global_position)
+	$LeftArm.look_at(player.global_position)
+	$RightArm.look_at(player.global_position)

@@ -1,9 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://c13s5afmxktet"]
+[gd_scene load_steps=5 format=3 uid="uid://c13s5afmxktet"]
 
 [ext_resource type="Texture2D" uid="uid://q0mkawhihawj" path="res://Assets/Zombie.png" id="1_lop14"]
 [ext_resource type="Script" path="res://Scripts/zombie.gd" id="1_oxvyg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pmxb3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g31ux"]
 
 [node name="Zombie" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -14,46 +16,30 @@ script = ExtResource("1_oxvyg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_pmxb3")
 
-[node name="Skeleton2D" type="Skeleton2D" parent="."]
-scale = Vector2(0.5, 0.5)
+[node name="ZombieArea" type="Area2D" parent="." groups=["Zombie"]]
 
-[node name="Bone2D" type="Bone2D" parent="Skeleton2D"]
-rest = Transform2D(1, 0, 0, 1, 0, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZombieArea"]
+shape = SubResource("CapsuleShape2D_g31ux")
 
-[node name="Bone2D" type="Bone2D" parent="Skeleton2D/Bone2D"]
-position = Vector2(-4.00265, 15.9993)
-rest = Transform2D(1, 0, 0, 1, -4.00265, 15.9993)
-
-[node name="r" type="Bone2D" parent="Skeleton2D/Bone2D/Bone2D"]
-position = Vector2(24, 0.00397142)
-rotation = 0.261799
-rest = Transform2D(1, 0, 0, 1, 24, 0.00397142)
-
-[node name="l" type="Bone2D" parent="Skeleton2D/Bone2D/Bone2D"]
-position = Vector2(-27.9997, -2.00463)
-rest = Transform2D(1, 0, 0, 1, -27.9997, -2.00463)
-
-[node name="Polygon2D2" type="Polygon2D" parent="."]
-position = Vector2(-6, 7)
-offset = Vector2(-9, -22)
+[node name="LeftArm" type="Polygon2D" parent="."]
+position = Vector2(-5, 4)
+offset = Vector2(-10, -19.5)
 texture = ExtResource("1_lop14")
-skeleton = NodePath("../Skeleton2D")
 polygon = PackedVector2Array(11.1838, 20.875, 11.1213, 18.3125, 9.55881, 18.3125, 4.68381, 23.1875, 5.87131, 24.875, 7.49631, 25.125, 9.35262, 22.9855)
 uv = PackedVector2Array(11.1838, 20.875, 11.1213, 18.3125, 9.55881, 18.375, 4.68381, 23.1875, 5.87131, 24.875, 7.49631, 25.125, 9.35262, 22.9855)
 bones = ["Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Bone2D/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Bone2D/Bone2D/r", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Bone2D/Bone2D/l", PackedFloat32Array(1, 1, 1, 1, 1, 1, 0.5)]
 
-[node name="Polygon2D3" type="Polygon2D" parent="."]
-position = Vector2(-17, -15)
+[node name="RightArm" type="Polygon2D" parent="."]
+position = Vector2(98, -37)
+offset = Vector2(-115, 22)
 texture = ExtResource("1_lop14")
-skeleton = NodePath("../Skeleton2D")
 polygon = PackedVector2Array(22.3713, 18.3125, 22.3088, 20.6875, 26.6838, 25.0625, 29.3088, 23.375, 24.5588, 17.9375)
 uv = PackedVector2Array(22.3713, 18.3125, 22.3088, 20.6875, 26.6838, 25.0625, 29.3088, 23.375, 24.5588, 17.9375)
 bones = ["Bone2D", PackedFloat32Array(0, 0, 0, 0, 0), "Bone2D/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0), "Bone2D/Bone2D/r", PackedFloat32Array(0, 0, 1, 1, 0), "Bone2D/Bone2D/l", PackedFloat32Array(0, 0, 0, 0, 0)]
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="BodyArm" type="Polygon2D" parent="."]
 position = Vector2(-16, -15)
 texture = ExtResource("1_lop14")
-skeleton = NodePath("../Skeleton2D")
 polygon = PackedVector2Array(3.5625, 0.875, 4.1875, 12.875, 11.5, 18.4375, 11.9375, 31.6875, 24.1875, 31.75, 22.375, 27.5625, 22.1875, 17.875, 25.75, 14.625, 25.0625, 0.8125)
 uv = PackedVector2Array(4.0625, 0.9375, 4.1875, 12.875, 11.5, 18.4375, 11.9375, 31.6875, 24.1875, 31.75, 22.375, 27.5625, 22.1875, 17.875, 25.75, 14.625, 25.0625, 0.8125)
 polygons = [PackedInt32Array(0, 8, 7, 6, 2, 1), PackedInt32Array(2, 3, 4, 5, 6)]
