@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3dswrcbyh2pp"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_0b18j"]
+[ext_resource type="Texture2D" uid="uid://c0o1i2440kaxx" path="res://Assets/Charachter.png" id="1_m51qc"]
+[ext_resource type="Texture2D" uid="uid://668wt8f568gn" path="res://Assets/ShotGun.png" id="3_smpo3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mhmau"]
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 1
+scale = Vector2(2, 2)
+script = ExtResource("1_0b18j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_mhmau")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+offset = Vector2(-17, -15)
+texture = ExtResource("1_m51qc")
+polygon = PackedVector2Array(9.25, 3.125, 7.9375, 4.125, 9.125, 5.9375, 10.6875, 5.5, 10.75, 8.8125, 12, 9.0625, 11.75, 12.4375, 13.8125, 14.1875, 11.9375, 14.75, 12.125, 21.5625, 13, 21.875, 12.9375, 27.6875, 15.875, 28.6875, 15.875, 23.125, 18.6875, 23, 18.625, 27.3125, 23.25, 27.4375, 22.3125, 22.5625, 23.125, 21.5, 23.125, 15.375, 22.75, 14.5, 22.125, 10.125, 23.375, 9.75, 23.1875, 6.9375, 25.75, 7, 25.6875, 4.5, 23.1875, 2.875, 9.75, 2.375)
+uv = PackedVector2Array(9.25, 3.125, 7.9375, 4.125, 9.125, 5.9375, 10.6875, 5.5, 10.75, 8.8125, 12, 9.0625, 11.75, 12.4375, 13.8125, 14.1875, 11.9375, 14.75, 12.125, 21.5625, 13, 21.875, 12.9375, 27.6875, 15.875, 28.6875, 15.875, 23.125, 18.6875, 23, 18.625, 27.3125, 23.25, 27.4375, 22.3125, 22.5625, 23.125, 21.5, 23.125, 15.375, 22.75, 14.5, 22.125, 10.125, 23.375, 9.75, 23.1875, 6.9375, 25.75, 7, 25.6875, 4.5, 23.1875, 2.875, 9.75, 2.375)
+
+[node name="Armys" type="Node2D" parent="."]
+position = Vector2(1, 0.5)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Armys"]
+position = Vector2(-7, 3)
+offset = Vector2(-9, -18)
+texture = ExtResource("1_m51qc")
+polygon = PackedVector2Array(11.5588, 15.5, 11.5588, 17.6875, 8.49631, 21.4375, 6.24631, 21.375, 5.37131, 19.75, 11.0588, 14.6875)
+uv = PackedVector2Array(11.5588, 15.5, 11.5588, 17.6875, 8.49631, 21.4375, 6.24631, 21.375, 5.37131, 19.75, 11.0588, 14.6875)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Armys"]
+position = Vector2(7, 3)
+offset = Vector2(-25, -18)
+texture = ExtResource("1_m51qc")
+polygon = PackedVector2Array(23.5588, 15.5, 23.4963, 17.875, 26.8088, 21.5, 28.4338, 21.3125, 29.1838, 19.75, 23.5588, 14)
+uv = PackedVector2Array(23.5588, 15.5, 23.4963, 17.875, 26.8088, 21.5, 28.4338, 21.3125, 29.1838, 19.75, 23.5588, 14)
+
+[node name="ShotGun" type="Sprite2D" parent="Armys"]
+position = Vector2(3, 7.5)
+rotation = 0.101813
+texture = ExtResource("3_smpo3")
+
+[node name="ShootPosition" type="Marker2D" parent="Armys/ShotGun"]
+position = Vector2(9.00421, -0.417321)
+rotation = -0.101813
+
+[node name="ArmysPosition" type="Marker2D" parent="."]
