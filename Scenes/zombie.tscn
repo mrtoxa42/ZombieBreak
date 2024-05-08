@@ -30,8 +30,8 @@ uv = PackedVector2Array(11.1838, 20.875, 11.1213, 18.3125, 9.55881, 18.375, 4.68
 bones = ["Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Bone2D/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Bone2D/Bone2D/r", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Bone2D/Bone2D/l", PackedFloat32Array(1, 1, 1, 1, 1, 1, 0.5)]
 
 [node name="RightArm" type="Polygon2D" parent="."]
-position = Vector2(98, -37)
-offset = Vector2(-115, 22)
+position = Vector2(6, 4.5)
+offset = Vector2(-23, -19.5)
 texture = ExtResource("1_lop14")
 polygon = PackedVector2Array(22.3713, 18.3125, 22.3088, 20.6875, 26.6838, 25.0625, 29.3088, 23.375, 24.5588, 17.9375)
 uv = PackedVector2Array(22.3713, 18.3125, 22.3088, 20.6875, 26.6838, 25.0625, 29.3088, 23.375, 24.5588, 17.9375)
